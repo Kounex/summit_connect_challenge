@@ -1,0 +1,19 @@
+{
+    "name": "Summit Connect Challenge",
+    "short_name": "SCC",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0000000",
+    "theme_color": "#EE0000",
+    "description": "WebApp for the Summit Connect Developer Hub Challenge",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
