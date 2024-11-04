@@ -11,19 +11,36 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SummitBackground(
-        child: Center(
-          child: BaseTitle(
-            text: env.env == 'prod'
-                ? const Utf8Decoder()
-                    .convert(
-                      base64.decode(
-                          'Q29uZ3JhdHVsYXRpb25zIVxuXG5Zb3UgZGVwbG95ZWQgdGhpcyBhcHBsaWNhdGlvbiB3aXRoIERldmVsb3BlciBIdWIhXG5cbkZsYWc6IHN1bW1pdC1kZXZlbG9wZXItaHViLWNoYWxsZW5nZQ=='),
-                    )
-                    .replaceAll('\\n', '\n')
-                : 'Environment not set to \'prod\'!',
+      body: Stack(
+        children: [
+          SummitBackground(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.sizeOf(context).width / 7,
+                    right: MediaQuery.sizeOf(context).width / 5),
+                child: BaseTitle(
+                  text: env.env == 'prod'
+                      ? const Utf8Decoder()
+                          .convert(
+                            base64.decode(
+                                'Q29uZ3JhdHVsYXRpb25zIVxuXG5Zb3UgZGVwbG95ZWQgdGhpcyBhcHBsaWNhdGlvbiB3aXRoIERldmVsb3BlciBIdWIhXG5cbkZsYWc6IHN1bW1pdC1kZXZlbG9wZXItaHViLWNoYWxsZW5nZQ=='),
+                          )
+                          .replaceAll('\\n', '\n')
+                      : 'Environment not set to \'prod\'!',
+                ),
+              ),
+            ),
           ),
-        ),
+          Positioned(
+            bottom: 48.0,
+            right: 48.0,
+            child: Image.asset(
+              'assets/images/RedHatLogoSmall.png',
+              height: 24.0,
+            ),
+          ),
+        ],
       ),
     );
   }

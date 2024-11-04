@@ -14,7 +14,7 @@ class BaseTitle extends StatelessWidget {
       text ?? '',
       style: Theme.of(context)
           .textTheme
-          .displayLarge
+          .displayMedium
           ?.copyWith(fontFamily: 'RedHatDisplay'),
     );
   }
